@@ -26,4 +26,7 @@ def getAlimentos(self, idAlimento):
     return self.dados[idAlimento]
 
 
-print(bd.dados.keys())
+#print(bd.dados.keys())
+chaves = bd.dados.keys()
+for chave in chaves:
+    print(chave)
