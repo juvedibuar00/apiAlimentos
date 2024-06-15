@@ -29,14 +29,16 @@ class BancoDados:
         self.dados[alimento.id]= alimento
         return  {"dados": alimento, "info": "alimento criado com sucesso", "statusCode": 200}
 
-
-    def excluirAlimento(self, id:int):
+    def excluirAlimento(self, id: int):
         chaves = self.dados.keys()
         for chave in chaves:
             if id == chave:
                 alimentoExcluido = self.dados[id]
                 del self.dados[id]
-                return  {"alimentoExcluido": alimentoExcluido, "info": "alimento excluido com sucesso", "statusCode": 200}
+                return {"alimentoExcluido": alimentoExcluido, "info": "alimento excluído com sucesso", "statusCode": 200}
+
+
+
 
 bd = BancoDados()
 
