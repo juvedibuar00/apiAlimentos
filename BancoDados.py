@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from alimentos import Alimento, alimento1
+from Alimentos import Alimento, alimento1
 
 class BancoDados:
     def __init__(self, objetoDados={}):
