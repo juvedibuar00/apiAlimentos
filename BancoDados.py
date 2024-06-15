@@ -16,4 +16,4 @@ alimento2 = Alimento(1, 'teste', 10.50, True, 10, '')
 
 bd.adicionarAlimento(alimento2)
 
-print(bd.dados[2].nome)
+print(bd.dados[1].nome)
