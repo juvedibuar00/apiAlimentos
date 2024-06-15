@@ -17,3 +17,13 @@ alimento2 = Alimento(1, 'teste', 10.50, True, 10, '')
 bd.adicionarAlimento(alimento2)
 
 print(bd.dados[1].nome)
+
+def getAlimentos(self):
+    return self.dados
+
+def getAlimentos(self, idAlimento):
+
+    return self.dados[idAlimento]
+
+
+print(bd.dados.keys())
