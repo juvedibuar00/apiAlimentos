@@ -1,18 +1,24 @@
 from fastapi import FastAPI
-from BancoDados import  bd
+from BancoDados import bd
+from Alimentos import ModelAlimento
+from pydantic import BaseModel
 
 app = FastAPI()
 
-@app.get("/alimentos/")
-def buscarTodosAlimentos():
-    resposta = bd.getAlimentos()
+
+@app.get('/alimentos/')
+def buscarTodosOsAlimentos():
+    reposta = bd.getAlimentos()
     return {
-        'dados': resposta,
+        'dados': reposta,
         'statusCode': 200
     }
 
+@app.get('/alimentos/{id}')
+def buscarUmAlimento(id: int):
+    return bd.getAlimento(id)
 
-@app.get('alimentos/{id}/')
+@app.post('/alimentos/novo/')
+def criarNovoAlimento(novoAlimento : ModelAlimento):
+    return bd.setAlimento(novoAlimento)
 
-def buscarUmAlimento(id):
-    resposta = bd.getAlimento(id)
